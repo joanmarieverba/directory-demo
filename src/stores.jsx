@@ -18,6 +18,5 @@ const horizon = Horizon({
 });
 
 // Any number of stores that you like
-const chat = horizon('messages');
-const files = horizon('files');
-export {chat, files};
+const directory = horizon('entries');
+export {directory};

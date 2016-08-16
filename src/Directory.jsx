@@ -2,13 +2,16 @@ import React, {Component} from 'react';
 import { browserHistory } from 'react-router';
 import elementalStyles from '../node_modules/elemental/less/elemental.less';
 import { Button } from 'elemental';
+import DirectoryList from './DirectoryList.jsx';
+import stores from './stores.jsx';
+import {directory} from './stores.jsx';
 
 
     // browserHistory.push('/chat/nickname')
 
 var directoryPageStyle = {
-  // backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/07/cityscape7.jpg")',
-  backgroundColor: "olive",
+  backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/the-background-707185_1280.png")',
+  // backgroundColor: "olive",
   width: '100%',
   minHeight: '100%',
 }
@@ -36,6 +39,18 @@ var titleBanner = {
 
 
 export default class Directory extends Component {
+  constructor(props) {   //this handles the intital state of the query
+    super(props);
+    this.state = {
+      entryArray: [],
+    }
+    directory.fetch().subscribe( (results) => {
+		this.setState({
+			entryArray: results
+    });
+  });
+  }
+
 
   handleProfileButtonClick(e) {   //method
          //go get more data e.target.value
@@ -50,6 +65,7 @@ export default class Directory extends Component {
     return (
       <div style={directoryPageStyle} >
         <span style={titleBanner}>Directory</span>
+        <DirectoryList entryArray={this.state.entryArray} />
         <Button size="sm" style={updateButton} onClick={this.handleProfileButtonClick.bind(this)}>Update my profile</Button>
       </div>
     );

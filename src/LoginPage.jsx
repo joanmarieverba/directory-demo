@@ -4,8 +4,8 @@ import { browserHistory } from 'react-router';
     // browserHistory.push('/chat/nickname')
 
 var logInPageStyle = {
-  // backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/07/cityscape7.jpg")',
-  backgroundColor: "green",
+  backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/background-1430105_1280.png")',
+  // backgroundColor: "green",
   width: '100%',
   minHeight: '100%',
 }

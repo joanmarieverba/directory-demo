@@ -7,7 +7,7 @@ import { Button } from 'elemental';
     // browserHistory.push('/chat/nickname')
 
 var confirmPageStyle = {
-  // backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/07/cityscape7.jpg")',
+  // backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/2.jpg")',
   backgroundColor: "skyblue",
   width: '100%',
   minHeight: '100%',
@@ -40,6 +40,8 @@ var confirmPageItem = {
   marginLeft: "30px",
   paddingTop: "10px",
   border : "1px solid violet",
+  fontSize: "14px",
+  fontFamily: "Passion One",
 }
 
 export default class Confirm extends Component {
@@ -66,26 +68,26 @@ export default class Confirm extends Component {
         <span style={msgBanner}>Your Profile Information Has Been Saved</span>
         <Button size="sm" style={returnButton} onClick={this.handleReturnButtonClick.bind(this)}>Return to Directory</Button>
         <div style= {confirmPageItem}>
-          {this.state.dataArray[0].firstName}
-          {this.state.dataArray[0].lastName}
-          {this.state.dataArray[0].penName}
-          {this.state.dataArray[0].street1}
-          {this.state.dataArray[0].street2}
-          {this.state.dataArray[0].city}
+          <div>{this.state.dataArray[0].firstName}
+          {this.state.dataArray[0].lastName}</div>
+          <div>{this.state.dataArray[0].penName}</div>
+          <div>{this.state.dataArray[0].street1}</div>
+          <div>{this.state.dataArray[0].street2}</div>
+          <div>{this.state.dataArray[0].city}
           {this.state.dataArray[0].mystate}
           {this.state.dataArray[0].postCode}
-          {this.state.dataArray[0].country}
-          {this.state.dataArray[0].phone}
-          {this.state.dataArray[0].altPhone}
-          {this.state.dataArray[0].email}
-          {this.state.dataArray[0].altEmail}
-          {this.state.dataArray[0].website}
-          {this.state.dataArray[0].agent}
-          {this.state.dataArray[0].fb}
-          {this.state.dataArray[0].tw}
-          {this.state.dataArray[0].social}
-          {this.state.dataArray[0].credits}
-          {this.state.dataArray[0].id}
+          {this.state.dataArray[0].country}</div>
+          <div>{this.state.dataArray[0].phone}
+          {this.state.dataArray[0].altPhone}</div>
+          <div>{this.state.dataArray[0].email}
+          {this.state.dataArray[0].altEmail}</div>
+          <div>{this.state.dataArray[0].website}</div>
+          <div>{this.state.dataArray[0].agent}</div>
+          <div>{this.state.dataArray[0].fb}</div>
+          <div>{this.state.dataArray[0].tw}</div>
+          <div>{this.state.dataArray[0].social}</div>
+          <div>{this.state.dataArray[0].credits}</div>
+          <div>{this.state.dataArray[0].id}</div>
         </div>
       </div>
     );
