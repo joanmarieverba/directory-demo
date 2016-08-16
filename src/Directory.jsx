@@ -43,7 +43,7 @@ export default class Directory extends Component {
   //set state to new query
     e.preventDefault(); //prevents form submission from deleting current page context
     console.log("profile button clicked");
-    browserHistory.push('/profile/' + this.props.params.id);
+    browserHistory.push('/profile/');
   }
 
   render() {

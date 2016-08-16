@@ -26,7 +26,7 @@ export default class ProfileForm extends Component {
       street1: "",
       street2: "",
       city: "",
-      state: "",
+      mystate: "",
       postCode: "",
       country: "",
       phone: "",
@@ -49,7 +49,26 @@ export default class ProfileForm extends Component {
     console.log("name ", this.state.firstName);
     console.log("credits ", this.state.credits);
     console.log ("state ", this.state);
-    this.props.onNewMsg.bind(this)(this.state.firstName, this.state.credits);
+    this.props.onNewMsg.bind(this)
+      (this.state.firstName,
+       this.state.lastName,
+       this.state.penName,
+       this.state.street1,
+       this.state.street2,
+       this.state.city,
+       this.state.mystate,
+       this.state.postCode,
+       this.state.country,
+       this.state.phone,
+       this.state.altPhone,
+       this.state.email,
+       this.state.altEmail,
+       this.state.website,
+       this.state.agent,
+       this.state.fb,
+       this.state.tw,
+       this.state.social,
+       this.state.credits);
     browserHistory.push('/confirm/');
   }
 
@@ -81,7 +100,7 @@ export default class ProfileForm extends Component {
   }
 
   handleStateChange(e){
-    this.setState({state: e.target.value});
+    this.setState({mystate: e.target.value});
   }
 
   handlePostCodeChange(e){
@@ -142,15 +161,18 @@ export default class ProfileForm extends Component {
           <Form type="inline" onSubmit={this.handleSaveButtonClick.bind(this)}>
                 <FormRow>
                 	<FormField width="one-third" >
+                    First Name:
                 		<FormInput placeholder="Name (first name, middle name, initials...)" name="firstName" onChange={this.handleFirstNameChange.bind(this)} />
                 	</FormField>
                   <FormField width="one-third" >
+                    Last Name:
                     <FormInput placeholder="Last name" name="lastName" onChange={this.handleLastNameChange.bind(this)}  />
                   </FormField>
                 </FormRow>
 
                 <FormRow>
                   <FormField width="one-half" >
+                    Pseudonym(s):
                     <FormInput placeholder="Pseudonym(s)" name="penName" onChange={this.handlePenNameChange.bind(this)}  />
                   </FormField>
                 </FormRow>
@@ -158,74 +180,90 @@ export default class ProfileForm extends Component {
 
                 <FormRow>
                   <FormField width="one-half">
+                     Address (line 1):
                 	   <FormInput placeholder="Address Line 1" name="street1" onChange={this.handleStreet1Change.bind(this)}  />
                   </FormField>
                 </FormRow>
                 <FormRow>
                   <FormField width="one-half">
+                   Address (line 2):
                 	 <FormInput placeholder="Address Line 2" name="street2" onChange={this.handleStreet2Change.bind(this)}  />
                    </FormField>
                 </FormRow>
 
                 <FormRow>
                 	<FormField width="one-third">
+                    City:
                 		<FormInput placeholder="City" name="city" onChange={this.handleCityChange.bind(this)}  />
                 	</FormField>
                 	<FormField width="one-third">
-                		<FormInput placeholder="State/Province/Region" name="state" onChange={this.handleStateChange.bind(this)}  />
+                    State/Province/Region:
+                		<FormInput placeholder="State/Province/Region" name="mystate" onChange={this.handleStateChange.bind(this)}  />
                 	</FormField>
                 </FormRow>
 
                 <FormRow>
                 	<FormField width="one-third">
+                    Postal Code:
                 		<FormInput width="one-third" placeholder="Post Code" name="postCode" onChange={this.handlePostCodeChange.bind(this)}  />
                 	</FormField>
                 	<FormField width="one-third">
+                    Country:
                 		<FormInput placeholder="Country" name="country" onChange={this.handleCountryChange.bind(this)}  />
                 	</FormField>
                 </FormRow>
 
                 <FormRow>
                   <FormField width="one-third" >
+                    Primary phone:
                     <FormInput placeholder="Primary Phone" name="phone" onChange={this.handlePhoneChange.bind(this)}  />
                   </FormField>
                   <FormField width="one-third" >
+                    Alternate Phone:
                     <FormInput placeholder="Alternate Phone" name="altPhone" onChange={this.handleAltPhoneChange.bind(this)}  />
                   </FormField>
                 </FormRow>
 
                 <FormRow>
                   <FormField width="one-third" >
+                    Primary email:
                     <FormInput placeholder="email" name="email" onChange={this.handleEmailChange.bind(this)}  />
                   </FormField>
                   <FormField width="one-third" >
+                    Alternate email:
                     <FormInput placeholder="alternate email" name="altEmail" onChange={this.handleAltEmailChange.bind(this)}  />
                   </FormField>
                 </FormRow>
 
                 <FormRow>
                   <FormField width="one-third" >
+                    Website(s):
                     <FormInput placeholder="website" name="website" onChange={this.handleWebsiteChange.bind(this)}  />
                   </FormField>
                   <FormField width="one-third" >
+                    Agent:
                     <FormInput placeholder="agent" name="agent" onChange={this.handleAgentChange.bind(this)}  />
                   </FormField>
                 </FormRow>
 
                 <FormRow>
                   <FormField width="one-third" >
+                    Facebook:
                     <FormInput placeholder="Facebook" name="fb" onChange={this.handleFBChange.bind(this)}  />
                   </FormField>
                   <FormField width="one-third" >
+                    Twitter:
                     <FormInput placeholder="Twitter" name="tw" onChange={this.handleTWChange.bind(this)}  />
                   </FormField>
                   <FormField width="one-third" >
+                    Other social media:
                     <FormInput placeholder="Other social media" name="social" onChange={this.handleSocialChange.bind(this)}  />
                   </FormField>
                 </FormRow>
 
               <FormRow>
                 <FormField width="two-thirds" >
+                  Credits (novels, short stories, audio, etc.):
                   <FormInput placeholder="Credits" multiline onChange={this.handleCreditsChange.bind(this)} />
                 </FormField>
               </FormRow>

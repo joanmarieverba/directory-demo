@@ -14,9 +14,9 @@ import elementalStyles from '../node_modules/elemental/less/elemental.less';
 ReactDOM.render(
   <Router history={browserHistory}>
   <Route path="/" component={LoginPage}  />
-  <Route path="/directory/:id" component={Directory}/>
-  <Route path="/profile/:id" component={Profile} />
-  <Route path="/confirm/" component={Confirm} />
+  <Route path="/directory" component={Directory}/>
+  <Route path="/profile" component={Profile} />
+  <Route path="/confirm" component={Confirm} />
   <Route path="*" component={NoMatch} />
 </Router>,
 document.getElementById('root')

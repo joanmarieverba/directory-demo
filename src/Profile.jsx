@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ProfileForm from './ProfileForm.jsx';
 import ChatList from './ChatList.jsx';
+import Confirm from './Confirm.jsx';
 import elementalStyles from '../node_modules/elemental/less/elemental.less';
 import { browserHistory } from 'react-router';
 import Horizon from '@horizon/client';
@@ -18,11 +19,11 @@ var chatpageStyle = {
  };
 
  var boxheader = {
-   paddingLeft: "200px",
-   paddingRight: "150px",
+   paddingLeft: "30px",
+  //  paddingRight: "150px",
    paddingTop: "20px",
-   paddingBottom: "40px",
-   display: "inline-block",
+  //  paddingBottom: "40px",
+  //  display: "inline-block",
    textAlign: "centered",
   //  fontFamily: "Vast Shadow",
    fontFamily: "Passion One",
@@ -36,35 +37,75 @@ export default class Profile extends Component {
     super(props);
     this.state = {
       messageArray: [],
+      userid : localStorage.getItem('userid'),  //this.state.userid
     }
-    chat.watch().subscribe( (results) => {
-		this.setState({
-			messageArray: results
-    });
-  });
+    // chat.watch().subscribe( (results) => {
+		//     this.setState({
+		// 	       messageArray: results
+    //        });
+    // });
   }
 
-  handleNewMsg(gmt, message) {   //method
-    console.log ("chatgmt ", gmt, "chatmsg ", message, this);
-      chat.store( {
-	      message: message,
-	      id: this.props.params.id,
-	      gmt: gmt,
-  })}
-  //   console.log ("chatgmt ", gmt, "chatmsg ", message, this);
-  //   var newMessageArray = Array.prototype.slice.call(this.state.messageArray);
-  //   newMessageArray.push({gmt: gmt, message: message, nickname: this.props.params.nickname});
-  //   this.setState({messageArray: newMessageArray});
-  // }
+  handleNewMsg(
+    firstName,
+    lastName,
+    penName,
+    street1,
+    street2,
+    city,
+    mystate,
+    postCode,
+    country,
+    phone,
+    altPhone,
+    email,
+    altEmail,
+    website,
+    agent,
+    fb,
+    tw,
+    social,
+    credits) {   //method
+  //     chat.store( {
+	//       message: message,
+	//       id: this.props.params.id,
+	//       gmt: gmt,
+  // })}
+    console.log ("firstName ", firstName, "credits ", credits, this);
+    var newMessageArray = Array.prototype.slice.call(this.state.messageArray);
+    newMessageArray.push({
+      firstName: firstName,
+      lastName: lastName,
+      penName: penName,
+      street1: street1,
+      street2: street2,
+      city: city,
+      mystate: mystate,
+      postCode: postCode,
+      country: country,
+      phone: phone,
+      altPhone: altPhone,
+      email: email,
+      altEmail: altEmail,
+      website: website,
+      agent: agent,
+      fb: fb,
+      tw: tw,
+      social: social,
+      credits: credits,
+      id: this.state.userid
+    });
+    localStorage.setItem("dataArray", JSON.stringify(newMessageArray));
+  }
 
  //react calls render over and over again by the brower when it refreshes
     render() {
       // console.log("nickname:", {this.props.nickname});
       return (
         <div style={chatpageStyle}>
-        <h1 style={boxheader}>View/Change Your Profile</h1>
-        <ChatList nickname={this.props.params.nickname} messageArray={this.state.messageArray} />
-        <ProfileForm nickname={this.props.params.nickname} onNewMsg={this.handleNewMsg.bind(this)} />
+          <h1 style={boxheader}>View/Change Your Profile</h1>
+          <ProfileForm id={this.state.userid} onNewMsg={this.handleNewMsg.bind(this)} />
+          {/* <Confirm id={this.state.userid} messageArray={this.state.messageArray} /> */}
         </div>
       )}
     };

@@ -62,7 +62,8 @@ export default class LoginPage extends Component {
   //set state to new query
     e.preventDefault(); //prevents form submission from deleting current page context
     console.log("id entered", this.state.enteredId);
-    browserHistory.push('/directory/' + this.state.enteredId);
+    localStorage.setItem("userid", this.state.enteredId);
+    browserHistory.push('/directory/');
   }
   handleSearchInputChange(e){
     //we have a value
