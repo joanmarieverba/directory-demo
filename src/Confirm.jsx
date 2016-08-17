@@ -49,9 +49,15 @@ export default class Confirm extends Component {
     super(props);
     this.state = {
       userid : localStorage.getItem('userid'),  //this.state.userid
-      dataArray : JSON.parse(localStorage.getItem('dataArray')),
+      // dataArray : JSON.parse(localStorage.getItem('dataArray')),
     }
     console.log(this.state);
+
+    directory.fetch().subscribe( (results) => {
+      this.setState({
+        entryArray: results
+      });
+    });
   }
   handleReturnButtonClick(e) {   //method
          //go get more data e.target.value
@@ -63,33 +69,51 @@ export default class Confirm extends Component {
   }
 
   render() {
+    var id = this.state.userid;
+    var oneEntry = this.state.entryArray;
+    oneEntry.filter((item) => {
+      if (id === item.id){return true;} else {return false;}
+    });
     return (
       <div style={confirmPageStyle} >
         <span style={msgBanner}>Your Profile Information Has Been Saved</span>
         <Button size="sm" style={returnButton} onClick={this.handleReturnButtonClick.bind(this)}>Return to Directory</Button>
         <div style= {confirmPageItem}>
-          <div>{this.state.dataArray[0].firstName}
-          {this.state.dataArray[0].lastName}</div>
-          <div>{this.state.dataArray[0].penName}</div>
-          <div>{this.state.dataArray[0].street1}</div>
-          <div>{this.state.dataArray[0].street2}</div>
-          <div>{this.state.dataArray[0].city}
-          {this.state.dataArray[0].mystate}
-          {this.state.dataArray[0].postCode}
-          {this.state.dataArray[0].country}</div>
-          <div>{this.state.dataArray[0].phone}
-          {this.state.dataArray[0].altPhone}</div>
-          <div>{this.state.dataArray[0].email}
-          {this.state.dataArray[0].altEmail}</div>
-          <div>{this.state.dataArray[0].website}</div>
-          <div>{this.state.dataArray[0].agent}</div>
-          <div>{this.state.dataArray[0].fb}</div>
-          <div>{this.state.dataArray[0].tw}</div>
-          <div>{this.state.dataArray[0].social}</div>
-          <div>{this.state.dataArray[0].credits}</div>
-          <div>{this.state.dataArray[0].id}</div>
+          <div>{this.state.oneEntry[0].firstName}
+          {this.state.oneEntry[0].lastName}</div>
+          <div>{this.state.oneEntry.penName}</div>
+          <div>{this.state.oneEntry.street1}</div>
+          <div>{this.state.oneEntry.street2}</div>
+          <div>{this.state.oneEntry.city}
+          {this.state.oneEntry.mystate}
+          {this.state.oneEntry.postCode}
+          {this.state.oneEntry.country}</div>
+          <div>{this.state.oneEntry.phone}
+          {this.state.oneEntry.altPhone}</div>
+          <div>{this.state.oneEntry.email}
+          {this.state.oneEntry.altEmail}</div>
+          <div>{this.state.oneEntry.website}</div>
+          <div>{this.state.oneEntry.agent}</div>
+          <div>{this.state.oneEntry.fb}</div>
+          <div>{this.state.oneEntry.tw}</div>
+          <div>{this.state.oneEntry.social}</div>
+          <div>{this.state.oneEntry.credits}</div>
+          <div>{this.state.oneEntry.id}</div>
         </div>
       </div>
     );
   }
 };
+
+
+// var id = this.state.userid;
+// var oneEntry = this.state.entryArray.filter((item) => {
+//   console.log("id ", id, " item id ", item.id);
+//   if (id === item.id){
+//     return true;
+//   } else {
+//     return false;
+//   }
+// });
+// console.log("profile button clicked", oneEntry);
+// localStorage.setItem("singleEntry", oneEntry);

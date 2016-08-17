@@ -15,12 +15,12 @@ var topBanner = {
    position: "fixed",
    textAlign: "center",
    fontFamily: 'Orbitron',
-   color: "yellow",
+   color: "black",
    fontSize: "36px",
    top: "0",
    left : "0",
    border: "3px solid #73AD21",
-   backgroundColor: "red",
+   backgroundColor: "aqua",
    WebkitTransition: 'all',
    msTransition: 'all'
  }
@@ -78,7 +78,6 @@ export default class LoginPage extends Component {
       <div style={logInPageStyle} >
       <span style={topBanner}>Welcome to the Directory Database</span>
       <span style={instructions} > Enter your id to begin and click the Enter button: </span>
-{/* //submit responds to return or click */}
       <form onSubmit={this.handleSubmitButtonClick.bind(this)}>
         <label  style={inputBox}>
           <input type="text" placeholder="Enter id" onChange={this.handleSearchInputChange.bind(this)} />

@@ -7,7 +7,7 @@ var listStyle = {
   fontWeight: "bold",
   display: "block",
   padding: "10px",
-  width: "75%",
+  width: "50%",
   margin: "0 auto",
   marginBottom: "10px",
   border: "3px solid #73AD21",

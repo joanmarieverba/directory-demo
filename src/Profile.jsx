@@ -9,8 +9,8 @@ import {directory} from './stores.jsx';
 
 
 var chatpageStyle = {
-    // backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/low-poly-1239778_1280.jpg")',
-    backgroundColor: "lightblue",
+    backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/low-poly-1239778_1280.jpg")',
+    // backgroundColor: "lightblue",
     width: "100%",
     minHeight: "100%",
     WebkitTransition: 'all',
@@ -25,10 +25,11 @@ var chatpageStyle = {
   //  display: "inline-block",
    textAlign: "centered",
   //  fontFamily: "Vast Shadow",
-   fontFamily: "Passion One",
+   fontFamily: "Verdana",
    fontSize: "24px",
+   fontWeight: "bold",
   //  WebkitTextStroke: "1px black",
-   color: "black",
+   color: "white",
  }
 
 export default class Profile extends Component {
@@ -43,6 +44,7 @@ export default class Profile extends Component {
 			       entryArray: results
            });
     });
+    directory.find({id: this.state.userid}).fetch().subscribe(msg => console.log(msg));
   }
 
   handleNewMsg(

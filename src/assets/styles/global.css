@@ -79,6 +79,20 @@
        url('../fonts/syncopate-v7-latin-regular.svg#Syncopate') format('svg'); /* Legacy iOS */
 }
 
+/* rubik-one-regular - latin */
+@font-face {
+  font-family: 'Rubik One';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/rubik-one-v4-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Rubik One Regular'), local('RubikOne-Regular'),
+       url('../fonts/rubik-one-v4-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/rubik-one-v4-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/rubik-one-v4-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/rubik-one-v4-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/rubik-one-v4-latin-regular.svg#RubikOne') format('svg'); /* Legacy iOS */
+}
+
 html, body, #root {
 
   margin: 0;
