@@ -67,26 +67,27 @@ export default class Directory extends Component {
          //set state, use bind below to insure we get the right value for this
   //set state to new query
     e.preventDefault(); //prevents form submission from deleting current page context
-
-    var id = this.state.userid;
-    var oneEntry = this.state.entryArray.filter((item) => {
-      console.log("id ", id, " item id ", item.id);
-      if (id === item.id){
-        return true;
-      } else {
-        return false;
-      }
-    });
-    console.log("profile button clicked", oneEntry);
-    localStorage.setItem("singleEntry", oneEntry);
     browserHistory.push('/profile/');
   }
 
   render() {
+    this.state.entryArray.sort(function(a, b) {
+      var nameA = a.lastName.toUpperCase() + a.firstName.toUpperCase(); // ignore upper and lowercase
+      var nameB = b.lastName.toUpperCase() + a.firstName.toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+          return -1;
+      }
+      if (nameA > nameB) {
+          return 1;
+      }
+      // names must be equal
+      return 0;
+    });
+
     return (
       <div style={directoryPageStyle} >
         <span style={titleBanner}>Directory</span>
-        <div style={divButton}><Button size="sm" style={updateButton} onClick={this.handleProfileButtonClick.bind(this)}>Update my profile</Button></div>
+        <div style={divButton}><Button size="sm" style={updateButton} onClick={this.handleProfileButtonClick.bind(this)}>Update/enter my profile</Button></div>
         <DirectoryList entryArray={this.state.entryArray} />
       </div>
     );

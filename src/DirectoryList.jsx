@@ -39,7 +39,6 @@ export default class DirectoryList extends Component {
             agent={item.agent}
             fb={item.fb}
             tw={item.tw}
-            social={item.social}
             credits={item.credits}
             id={item.id}
             key={item.id}/>

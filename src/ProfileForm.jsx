@@ -42,7 +42,6 @@ export default class ProfileForm extends Component {
       agent:'',
       fb:'',
       tw:'',
-      social:'',
       credits:'',
     }
     directory.fetch().subscribe( (results) => {
@@ -68,7 +67,6 @@ export default class ProfileForm extends Component {
       agent: user.agent,
       fb: user.fb,
       tw: user.tw,
-      social: user.social,
       credits: user.credits,
     })
     console.log("user ", user);
@@ -100,7 +98,6 @@ export default class ProfileForm extends Component {
        this.state.agent,
        this.state.fb,
        this.state.tw,
-       this.state.social,
        this.state.credits);
     browserHistory.push('/confirm/');
   }
@@ -174,10 +171,6 @@ export default class ProfileForm extends Component {
 
   handleTWChange(e){
     this.setState({tw: e.target.value});
-  }
-
-  handleSocialChange(e){
-    this.setState({social: e.target.value});
   }
 
   handleCreditsChange(e){
@@ -282,16 +275,12 @@ export default class ProfileForm extends Component {
 
                 <FormRow>
                   <FormField width="one-third" >
-                    Facebook:
+                    Social media link:
                     <FormInput value={this.state.fb} name="fb" onChange={this.handleFBChange.bind(this)}  />
                   </FormField>
                   <FormField width="one-third" >
-                    Twitter:
+                    Second social media link:
                     <FormInput value={this.state.tw} name="tw" onChange={this.handleTWChange.bind(this)}  />
-                  </FormField>
-                  <FormField width="one-third" >
-                    Other social media:
-                    <FormInput value={this.state.social} name="social" onChange={this.handleSocialChange.bind(this)}  />
                   </FormField>
                 </FormRow>
 

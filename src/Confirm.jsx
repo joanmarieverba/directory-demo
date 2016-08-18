@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import { browserHistory } from 'react-router';
 import elementalStyles from '../node_modules/elemental/less/elemental.less';
 import { Button } from 'elemental';
+import stores from './stores.jsx';
+import {directory} from './stores.jsx';
 
-
-    // browserHistory.push('/chat/nickname')
 
 var confirmPageStyle = {
   // backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/2.jpg")',
@@ -17,7 +17,7 @@ var msgBanner = {
    width : "100%",
    position: "fixed",
    textAlign: "center",
-   fontFamily: 'Orbitron',
+   fontFamily: "Arial",
    color: "yellow",
    fontSize: "36px",
    top: "0",
@@ -29,19 +29,32 @@ var msgBanner = {
  }
 
  var returnButton = {
-   marginTop: "60px",
    float: "right",
    marginLeft: "10px",
  }
 
+ var placeButton = {
+   height: '20px',
+   position: "fixed",
+   zIndex: "100",
+   right: "15px",
+   textAlign: "right",
+   top: "12px",
+ }
+
 var confirmPageItem = {
-  display: "inline-block",
-  marginTop: "55px",
-  marginLeft: "30px",
-  paddingTop: "10px",
-  border : "1px solid violet",
+  fontWeight: "bold",
+  display: "block",
+  padding: "10px",
+  width: "50%",
+  margin: "0 auto",
+  marginBottom: "10px",
+  border: "3px solid #73AD21",
+  borderRadius: "15px",
+  fontFamily: "Verdana",
   fontSize: "14px",
-  fontFamily: "Passion One",
+  backgroundColor: "white",
+  marginTop: "55px",
 }
 
 export default class Confirm extends Component {
@@ -53,11 +66,33 @@ export default class Confirm extends Component {
     }
     console.log(this.state);
 
-    directory.fetch().subscribe( (results) => {
-      this.setState({
-        entryArray: results
-      });
-    });
+    // directory.fetch().subscribe( (results) => {
+    //   this.setState({
+    //     entryArray: results
+    //   });
+    // });
+    directory.find({id: this.state.userid}).fetch().subscribe(user => {this.setState({
+      firstName : user.firstName,
+      lastName: user.lastName,
+      penName: user.penName,
+      street1: user.street1,
+      street2: user.street2,
+      city: user.city,
+      mystate: user.mystate,
+      postCode: user.postCode,
+      country: user.country,
+      phone: user.phone,
+      altPhone: user.altPhone,
+      email: user.email,
+      altEmail: user.altEmail,
+      website: user.website,
+      agent: user.agent,
+      fb: user.fb,
+      tw: user.tw,
+      credits: user.credits,
+    })
+    console.log("user ", user);
+   });
   }
   handleReturnButtonClick(e) {   //method
          //go get more data e.target.value
@@ -69,51 +104,32 @@ export default class Confirm extends Component {
   }
 
   render() {
-    var id = this.state.userid;
-    var oneEntry = this.state.entryArray;
-    oneEntry.filter((item) => {
-      if (id === item.id){return true;} else {return false;}
-    });
+
     return (
       <div style={confirmPageStyle} >
         <span style={msgBanner}>Your Profile Information Has Been Saved</span>
-        <Button size="sm" style={returnButton} onClick={this.handleReturnButtonClick.bind(this)}>Return to Directory</Button>
+        <div style={placeButton}><Button size="sm" style={returnButton} onClick={this.handleReturnButtonClick.bind(this)}>Return to Directory</Button></div>
         <div style= {confirmPageItem}>
-          <div>{this.state.oneEntry[0].firstName}
-          {this.state.oneEntry[0].lastName}</div>
-          <div>{this.state.oneEntry.penName}</div>
-          <div>{this.state.oneEntry.street1}</div>
-          <div>{this.state.oneEntry.street2}</div>
-          <div>{this.state.oneEntry.city}
-          {this.state.oneEntry.mystate}
-          {this.state.oneEntry.postCode}
-          {this.state.oneEntry.country}</div>
-          <div>{this.state.oneEntry.phone}
-          {this.state.oneEntry.altPhone}</div>
-          <div>{this.state.oneEntry.email}
-          {this.state.oneEntry.altEmail}</div>
-          <div>{this.state.oneEntry.website}</div>
-          <div>{this.state.oneEntry.agent}</div>
-          <div>{this.state.oneEntry.fb}</div>
-          <div>{this.state.oneEntry.tw}</div>
-          <div>{this.state.oneEntry.social}</div>
-          <div>{this.state.oneEntry.credits}</div>
-          <div>{this.state.oneEntry.id}</div>
+          <div>{this.state.firstName}  {this.state.lastName}</div>
+          <div>{this.state.penName}</div>
+          <div>{this.state.street1}</div>
+          <div>{this.state.street2}</div>
+          <div>{this.state.city}  {this.state.mystate}  {this.state.postCode}  {this.state.country}</div>
+          <div>{this.state.phone} {this.state.altPhone}</div>
+          <div>{this.state.email} {this.state.altEmail}</div>
+          <div>{this.state.website}</div>
+          {this.state.agent !== "" ? <div>Agent: {this.props.agent}</div> : null }
+          {/* <div>Agent: {this.state.agent}</div> */}
+          <div>{this.state.fb}</div>
+          <div>{this.state.tw}</div>
+          <div>{this.state.credits.split("\n").map(function(item) {
+                  return (
+                      <span>  {item}  <br/> </span>
+                  )
+                })}
+          </div>
         </div>
       </div>
     );
   }
 };
-
-
-// var id = this.state.userid;
-// var oneEntry = this.state.entryArray.filter((item) => {
-//   console.log("id ", id, " item id ", item.id);
-//   if (id === item.id){
-//     return true;
-//   } else {
-//     return false;
-//   }
-// });
-// console.log("profile button clicked", oneEntry);
-// localStorage.setItem("singleEntry", oneEntry);

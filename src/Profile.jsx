@@ -9,7 +9,7 @@ import {directory} from './stores.jsx';
 
 
 var chatpageStyle = {
-    backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/low-poly-1239778_1280.jpg")',
+    backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/low-poly-square.jpg")',
     // backgroundColor: "lightblue",
     width: "100%",
     minHeight: "100%",
@@ -65,7 +65,6 @@ export default class Profile extends Component {
     agent,
     fb,
     tw,
-    social,
     credits) {   //method
       directory.store( {
         firstName: firstName,
@@ -85,7 +84,6 @@ export default class Profile extends Component {
         agent: agent,
         fb: fb,
         tw: tw,
-        social: social,
         credits: credits,
         id: this.state.userid,
       })}
