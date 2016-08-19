@@ -49,6 +49,12 @@ export default class DirectoryItem extends Component {
   }
 
   render (){
+    var lines = this.props.credits;
+    var formatted = lines.split("\n").map(function(item) {
+            return (
+                     <span>  {item}  <br/> </span>
+                 )
+    });
     return (
       <div>
         <h4 style={listStyle}>
@@ -65,13 +71,14 @@ export default class DirectoryItem extends Component {
           {this.props.agent !== "" ? <div>Agent: {this.props.agent}</div> : null }
           <div>{this.props.fb}</div>
           <div>{this.props.tw}</div>
+          <div>{ formatted }</div>
           {/* <div>{this.props.credits}</div> */}
-          <div>{this.props.credits.split("\n").map(function(item) {
+          {/* <div>{this.props.credits.split("\n").map(function(item) {
                   return (
                       <span>  {item}  <br/> </span>
                   )
                 })}
-          </div>
+          </div> */}
         </h4>
       </div>
     );

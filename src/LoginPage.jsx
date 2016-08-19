@@ -65,7 +65,7 @@ export default class LoginPage extends Component {
     localStorage.setItem("userid", this.state.enteredId);
     browserHistory.push('/directory/');
   }
-  handleSearchInputChange(e){
+  handleIdInputChange(e){
     //we have a value
     console.log("target ", e.target.value);
     //call another function which actually changes the state being sent into retriever
@@ -77,10 +77,10 @@ export default class LoginPage extends Component {
     return (
       <div style={logInPageStyle} >
       <span style={topBanner}>Welcome to the Directory Database</span>
-      <span style={instructions} > Enter your id to begin and click the Enter button: </span>
+      <div style={instructions} >Enter your id and click the Enter button to begin:</div>
       <form onSubmit={this.handleSubmitButtonClick.bind(this)}>
         <label  style={inputBox}>
-          <input type="text" placeholder="Enter id" onChange={this.handleSearchInputChange.bind(this)} />
+          <input type="text" placeholder="Enter id" onChange={this.handleIdInputChange.bind(this)} />
           <input type="submit" value="Enter" />
         </label>
       </form>

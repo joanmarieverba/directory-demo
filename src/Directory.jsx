@@ -43,7 +43,19 @@ var titleBanner = {
     right: "15px",
     textAlign: "right",
     top: "12px",
+    // border: "2px solid black",
   }
+
+  var searchBox = {
+    height: '20px',
+    position: "fixed",
+    zIndex: "100",
+    left: "15px",
+    textAlign: "left",
+    top: "12px",
+    // border: "2px solid black",
+  }
+
 
 
 export default class Directory extends Component {
@@ -51,7 +63,8 @@ export default class Directory extends Component {
     super(props);
     this.state = {
       entryArray: [],
-      oneEntry: [],
+      searchArray: [],
+      searchedName: "",
       userid : localStorage.getItem('userid'),  //this.state.userid
     }
     directory.fetch().subscribe( (results) => {
@@ -61,6 +74,26 @@ export default class Directory extends Component {
     });
   }
 
+  handleSearchInputChange(e){
+    //we have a value
+    console.log("target ", e.target.value);
+    //call another function which actually changes the state being sent into retriever
+    this.setState({searchedName: e.target.value});
+  }
+
+  handleSearchButtonClick(e) {   //method
+         //go get more data e.target.value
+         //set state, use bind below to insure we get the right value for this
+  //set state to new query
+    e.preventDefault(); //prevents form submission from deleting current page context
+    console.log("search term entered", this.state.searchedName);
+    localStorage.setItem("searchedName", this.state.searchedName);
+    var searchArray = this.state.entryArray.filter((item) => {
+     if (item.lastName === this.state.searchedName){return true;} else {return false;}
+    });
+    console.log("searchArray ", searchArray);
+    // browserHistory.push('/directory/');
+  }
 
   handleProfileButtonClick(e) {   //method
          //go get more data e.target.value
@@ -87,7 +120,14 @@ export default class Directory extends Component {
     return (
       <div style={directoryPageStyle} >
         <span style={titleBanner}>Directory</span>
-        <div style={divButton}><Button size="sm" style={updateButton} onClick={this.handleProfileButtonClick.bind(this)}>Update/enter my profile</Button></div>
+        <form onSubmit={this.handleSearchButtonClick.bind(this)}>
+          <label  style={searchBox}>
+            <input style={updateButton} type="text" placeholder="Enter last name" onChange={this.handleSearchInputChange.bind(this)} />
+            <input style={updateButton} type="submit" value="Search by last name" />
+          </label>
+        </form>
+        <div style={divButton}><Button size="sm" style={updateButton} onClick={this.handleProfileButtonClick.bind(this)}>Enter/update profile</Button></div>
+        {/* {this.state.searchArray === [] ? <DirectoryList entryArray={this.state.entryArray} /> : <DirectoryList entryArray={this.state.searchArray} /> } */}
         <DirectoryList entryArray={this.state.entryArray} />
       </div>
     );

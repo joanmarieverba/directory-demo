@@ -7,8 +7,9 @@ import {directory} from './stores.jsx';
 
 
 var confirmPageStyle = {
-  // backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/2.jpg")',
-  backgroundColor: "skyblue",
+  backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/b066cf3d002a1b5c_1920-e1471016591329.jpg")',
+  // backgroundColor: "skyblue",
+  backgroundSize: "100%",
   width: '100%',
   minHeight: '100%',
 }
@@ -43,18 +44,21 @@ var msgBanner = {
  }
 
 var confirmPageItem = {
+  position: "fixed",
   fontWeight: "bold",
   display: "block",
   padding: "10px",
   width: "50%",
-  margin: "0 auto",
+  margin: "55px auto",
   marginBottom: "10px",
+  marginTop: "55px",
   border: "3px solid #73AD21",
   borderRadius: "15px",
   fontFamily: "Verdana",
   fontSize: "14px",
   backgroundColor: "white",
-  marginTop: "55px",
+  left: "50%",
+  transform: "translateX(-50%)",
 }
 
 export default class Confirm extends Component {
@@ -104,7 +108,12 @@ export default class Confirm extends Component {
   }
 
   render() {
-
+    var lines = this.state.credits;
+    var formatted = lines.split("\n").map(function(item) {
+            return (
+                     <span>  {item}  <br/> </span>
+                 )
+    });
     return (
       <div style={confirmPageStyle} >
         <span style={msgBanner}>Your Profile Information Has Been Saved</span>
@@ -118,18 +127,30 @@ export default class Confirm extends Component {
           <div>{this.state.phone} {this.state.altPhone}</div>
           <div>{this.state.email} {this.state.altEmail}</div>
           <div>{this.state.website}</div>
-          {this.state.agent !== "" ? <div>Agent: {this.props.agent}</div> : null }
+          {this.state.agent !== "" ? <div>Agent: {this.state.agent}</div> : null }
           {/* <div>Agent: {this.state.agent}</div> */}
           <div>{this.state.fb}</div>
           <div>{this.state.tw}</div>
-          <div>{this.state.credits.split("\n").map(function(item) {
+          <div>{ formatted }</div>
+          {/* <div>{this.state.credits}</div> */}
+          {/* <div>{this.state.credits.split("\n").map(function(item) {
                   return (
                       <span>  {item}  <br/> </span>
                   )
                 })}
-          </div>
+          </div> */}
         </div>
       </div>
     );
   }
 };
+
+
+// render: function() {
+//       var lines = this.props.lines;
+//
+//       var formatted = lines.map(function(line) {
+//           return (<p>{line}</p>);
+//       });
+//       return (<div>{ formatted }</div>);
+//   }

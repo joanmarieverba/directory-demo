@@ -23,13 +23,20 @@ var chatpageStyle = {
    paddingTop: "20px",
   //  paddingBottom: "40px",
   //  display: "inline-block",
-   textAlign: "centered",
+  //  textAlign: "centered",
   //  fontFamily: "Vast Shadow",
    fontFamily: "Verdana",
    fontSize: "24px",
    fontWeight: "bold",
   //  WebkitTextStroke: "1px black",
    color: "white",
+ }
+ var instruction = {
+      paddingLeft: "30px",
+      paddingBottom: "10px",
+      fontFamily: "Verdana",
+      fontWeight: "bold",
+      color: "white",
  }
 
 export default class Profile extends Component {
@@ -90,10 +97,10 @@ export default class Profile extends Component {
 
  //react calls render over and over again by the brower when it refreshes
     render() {
-      // console.log("nickname:", {this.props.nickname});
       return (
         <div style={chatpageStyle}>
           <h1 style={boxheader}>View/Change Your Profile</h1>
+          <h5 style={instruction}>Enter/change your information and click the Save button below</h5>
           <ProfileForm id={this.state.userid} onNewMsg={this.handleNewMsg.bind(this)} />
         </div>
       )}
