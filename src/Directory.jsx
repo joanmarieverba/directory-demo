@@ -56,12 +56,20 @@ var titleBanner = {
     // border: "2px solid black",
   }
 
-
+  var errormsg = {
+    color: "black",
+    fontFamily: 'Verdana',
+    fontSize: "18px",
+    fontWeight: "bold",
+    textAlign: "center",
+    marginTop: "55px",
+  }
 
 export default class Directory extends Component {
   constructor(props) {   //this handles the intital state of the query
     super(props);
     this.state = {
+      displayArray: [],
       entryArray: [],
       searchArray: [],
       searchedName: "",
@@ -69,7 +77,8 @@ export default class Directory extends Component {
     }
     directory.fetch().subscribe( (results) => {
 		    this.setState({
-			    entryArray: results
+			    entryArray: results,
+          displayArray: results
         });
     });
   }
@@ -89,9 +98,14 @@ export default class Directory extends Component {
     console.log("search term entered", this.state.searchedName);
     localStorage.setItem("searchedName", this.state.searchedName);
     var searchArray = this.state.entryArray.filter((item) => {
-     if (item.lastName === this.state.searchedName){return true;} else {return false;}
+     if (item.lastName.toLowerCase() === this.state.searchedName.toLowerCase()){return true;} else {return false;}
     });
-    console.log("searchArray ", searchArray);
+    if (searchArray.length > 0) {
+      this.setState({displayArray: searchArray})
+    }
+    if (searchArray.length === 0) {
+      this.setState({displayArray: null})
+    }
     // browserHistory.push('/directory/');
   }
 
@@ -121,15 +135,21 @@ export default class Directory extends Component {
       <div style={directoryPageStyle} >
         <span style={titleBanner}>Directory</span>
         <form onSubmit={this.handleSearchButtonClick.bind(this)}>
-          <label  style={searchBox}>
+          <label style={searchBox}>
             <input style={updateButton} type="text" placeholder="Enter last name" onChange={this.handleSearchInputChange.bind(this)} />
             <input style={updateButton} type="submit" value="Search by last name" />
           </label>
         </form>
         <div style={divButton}><Button size="sm" style={updateButton} onClick={this.handleProfileButtonClick.bind(this)}>Enter/update profile</Button></div>
-        {/* {this.state.searchArray === [] ? <DirectoryList entryArray={this.state.entryArray} /> : <DirectoryList entryArray={this.state.searchArray} /> } */}
-        <DirectoryList entryArray={this.state.entryArray} />
+        {/* <DirectoryList entryArray={this.state.displayArray} /> */}
+        {this.state.displayArray === null ? <div style={errormsg}> No results found </div> : <DirectoryList entryArray={this.state.displayArray} />  }
       </div>
     );
   }
 };
+
+
+
+// for(var p in adminID)
+//     if(adminID.hasOwnProperty(p))
+//         adminID[p] = '';

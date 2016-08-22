@@ -65,6 +65,7 @@ export default class Confirm extends Component {
   constructor(props) {   //this handles the intital state of the query
     super(props);
     this.state = {
+      credits: "",
       userid : localStorage.getItem('userid'),  //this.state.userid
       // dataArray : JSON.parse(localStorage.getItem('dataArray')),
     }

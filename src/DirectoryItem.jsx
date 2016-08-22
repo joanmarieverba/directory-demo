@@ -73,12 +73,6 @@ export default class DirectoryItem extends Component {
           <div>{this.props.tw}</div>
           <div>{ formatted }</div>
           {/* <div>{this.props.credits}</div> */}
-          {/* <div>{this.props.credits.split("\n").map(function(item) {
-                  return (
-                      <span>  {item}  <br/> </span>
-                  )
-                })}
-          </div> */}
         </h4>
       </div>
     );

@@ -38,8 +38,16 @@ var instructions = {
   WebkitTextStroke: "1px black",
 }
 
+var forgotid = {
+  color: "white",
+  fontFamily: "Verdana",
+  paddingTop: "20px",
+  textAlign: "center",
+  fontWeight: "bold",
+}
+
 var inputBox = {
-  paddingTop: "100px",
+  paddingTop: "30px",
   display: "inline-block",
   fontFamily: "Arial",
   fontSize: "12px",
@@ -77,7 +85,8 @@ export default class LoginPage extends Component {
     return (
       <div style={logInPageStyle} >
       <span style={topBanner}>Welcome to the Directory Database</span>
-      <div style={instructions} >Enter your id and click the Enter button to begin:</div>
+      <div style={instructions}>Enter your id and click the Enter button to begin:</div>
+      <div><h5 style={forgotid}>If you have forgotten your id, please contact the admin at admin@admin.com</h5></div>
       <form onSubmit={this.handleSubmitButtonClick.bind(this)}>
         <label  style={inputBox}>
           <input type="text" placeholder="Enter id" onChange={this.handleIdInputChange.bind(this)} />

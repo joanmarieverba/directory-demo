@@ -114,7 +114,7 @@ export default class ProfileForm extends Component {
   }
 
   handlePenNameChange(e){
-    this.setState({PseudonymName: e.target.value});
+    this.setState({penName: e.target.value});
   }
 
   handleStreet1Change(e){
