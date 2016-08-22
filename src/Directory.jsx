@@ -5,6 +5,7 @@ import { Button } from 'elemental';
 import DirectoryList from './DirectoryList.jsx';
 import stores from './stores.jsx';
 import {directory} from './stores.jsx';
+// import ReactResponsiveText from 'react-responsive-type';
 
 
     // browserHistory.push('/chat/nickname')
@@ -147,9 +148,7 @@ export default class Directory extends Component {
     );
   }
 };
-
-
-
-// for(var p in adminID)
-//     if(adminID.hasOwnProperty(p))
-//         adminID[p] = '';
+// export default ReactResponsiveText(Directory,{
+//   minimum: 500,
+//   maximum: 1200
+// });

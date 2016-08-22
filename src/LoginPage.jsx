@@ -16,7 +16,8 @@ var topBanner = {
    textAlign: "center",
    fontFamily: 'Orbitron',
    color: "black",
-   fontSize: "36px",
+  //  fontSize: "36px",
+   fontSize: "3.1vw",
    top: "0",
    left : "0",
    border: "3px solid #73AD21",
@@ -33,7 +34,8 @@ var instructions = {
   color: "lightgreen",
   textAlign: "center",
   display: "inline-block",
-  fontSize: "32px",
+  // fontSize: "32px",
+  fontSize: "3vw",
   fontWeight: "bold",
   WebkitTextStroke: "1px black",
 }
@@ -41,19 +43,23 @@ var instructions = {
 var forgotid = {
   color: "white",
   fontFamily: "Verdana",
+  fontSize: "1.5vw",
   paddingTop: "20px",
+  paddingBottom: "20px",
   textAlign: "center",
   fontWeight: "bold",
 }
 
 var inputBox = {
-  paddingTop: "30px",
-  display: "inline-block",
+  paddingTop: "40px",
+  display: "block",
+  textAlign: "center",
   fontFamily: "Arial",
-  fontSize: "12px",
+  // fontSize: "12px",
+  fontSize: "1.2vw",
   fontWeight: "bold",
   margin: "0 auto",
-  paddingLeft: "400px",
+  // paddingLeft: "400px",
 }
 
 export default class LoginPage extends Component {
@@ -88,7 +94,7 @@ export default class LoginPage extends Component {
       <div style={instructions}>Enter your id and click the Enter button to begin:</div>
       <div><h5 style={forgotid}>If you have forgotten your id, please contact the admin at admin@admin.com</h5></div>
       <form onSubmit={this.handleSubmitButtonClick.bind(this)}>
-        <label  style={inputBox}>
+        <label style={inputBox}>
           <input type="text" placeholder="Enter id" onChange={this.handleIdInputChange.bind(this)} />
           <input type="submit" value="Enter" />
         </label>

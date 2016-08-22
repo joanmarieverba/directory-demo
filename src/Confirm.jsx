@@ -20,7 +20,9 @@ var msgBanner = {
    textAlign: "center",
    fontFamily: "Arial",
    color: "yellow",
-   fontSize: "36px",
+  //  fontSize: "2.5em",
+  //  fontSize: "36px",
+   fontSize: "3vw",
    top: "0",
    left : "0",
    border: "3px solid #73AD21",
@@ -35,7 +37,8 @@ var msgBanner = {
  }
 
  var placeButton = {
-   height: '20px',
+  //  height: '20px',
+  //  height: '2vw',
    position: "fixed",
    zIndex: "100",
    right: "15px",
@@ -147,11 +150,11 @@ export default class Confirm extends Component {
 };
 
 
-// render: function() {
-//       var lines = this.props.lines;
-//
-//       var formatted = lines.map(function(line) {
-//           return (<p>{line}</p>);
-//       });
-//       return (<div>{ formatted }</div>);
-//   }
+// @media only screen and (max-width: 767px) {
+//    h1 {
+//       font-size: 3em;
+//    }
+//    h2 {
+//       font-size: 2em;
+//    }
+// }
