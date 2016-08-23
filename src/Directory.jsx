@@ -5,10 +5,8 @@ import { Button } from 'elemental';
 import DirectoryList from './DirectoryList.jsx';
 import stores from './stores.jsx';
 import {directory} from './stores.jsx';
-// import ReactResponsiveText from 'react-responsive-type';
+import { StyleSheet, css } from 'aphrodite';
 
-
-    // browserHistory.push('/chat/nickname')
 
 var directoryPageStyle = {
   backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/the-background-707185_1280.png")',
@@ -19,22 +17,35 @@ var directoryPageStyle = {
 
 var titleBanner = {
    width : "100%",
-   position: "fixed",
+   display: "block",
+   margin: "0 auto",
+  //  position: "fixed",
    textAlign: "center",
    fontFamily: 'Orbitron',
    color: "black",
-   fontSize: "36px",
-   top: "0",
-   left : "0",
+  //  fontSize: "36px",
+   fontSize: "3vw",
+  //  top: "0",
+  //  left : "0",
    border: "3px solid #73AD21",
    backgroundColor: "palegreen",
    WebkitTransition: 'all',
    msTransition: 'all'
  }
+ const styles = StyleSheet.create({
+   small: {
+         '@media (max-width: 600px)': {
+             fontSize: '2vw',
+         }
+     }
+ });
+
+
 
  var updateButton = {
    color: "black",
    border: "2px solid black",
+   fontWeight: "bold",
  }
 
   var divButton = {
@@ -135,20 +146,27 @@ export default class Directory extends Component {
     return (
       <div style={directoryPageStyle} >
         <span style={titleBanner}>Directory</span>
+        {/* <div>Directory</div> */}
         <form onSubmit={this.handleSearchButtonClick.bind(this)}>
           <label style={searchBox}>
             <input style={updateButton} type="text" placeholder="Enter last name" onChange={this.handleSearchInputChange.bind(this)} />
             <input style={updateButton} type="submit" value="Search by last name" />
           </label>
         </form>
-        <div style={divButton}><Button size="sm" style={updateButton} onClick={this.handleProfileButtonClick.bind(this)}>Enter/update profile</Button></div>
+        <div style={divButton}><Button size="sm" style={updateButton} className={css(styles.small)} onClick={this.handleProfileButtonClick.bind(this)}>Enter/update profile</Button></div>
         {/* <DirectoryList entryArray={this.state.displayArray} /> */}
         {this.state.displayArray === null ? <div style={errormsg}> No results found </div> : <DirectoryList entryArray={this.state.displayArray} />  }
       </div>
     );
   }
 };
-// export default ReactResponsiveText(Directory,{
-//   minimum: 500,
-//   maximum: 1200
-// });
+
+
+// @media only screen and (max-width: 767px) {
+//    h1 {
+//       font-size: 3em;
+//    }
+//    h2 {
+//       font-size: 2em;
+//    }
+// }

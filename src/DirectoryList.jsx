@@ -5,7 +5,7 @@ import { Button, Alert, Spinner, Row, Col, Form, FormField, FormInput } from 'el
 import { browserHistory } from 'react-router';
 
 var directoryStyle = {
-    marginTop: "50px",
+    marginTop: "10px",
     marginBottom: '50px',
     WebkitTransition: 'all',
     msTransition: 'all'
