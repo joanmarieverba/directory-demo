@@ -34,13 +34,12 @@ var titleBanner = {
  }
  const styles = StyleSheet.create({
    small: {
-         '@media (max-width: 600px)': {
+         '@media (max-width: 800px)': {
              fontSize: '2vw',
+             marginTop: '2vw',
          }
      }
  });
-
-
 
  var updateButton = {
    color: "black",
@@ -48,14 +47,13 @@ var titleBanner = {
    fontWeight: "bold",
  }
 
-  var divButton = {
+  var profileButton = {
     height: '20px',
     position: "fixed",
     zIndex: "100",
     right: "15px",
     textAlign: "right",
     top: "12px",
-    // border: "2px solid black",
   }
 
   var searchBox = {
@@ -65,7 +63,6 @@ var titleBanner = {
     left: "15px",
     textAlign: "left",
     top: "12px",
-    // border: "2px solid black",
   }
 
   var errormsg = {
@@ -149,11 +146,11 @@ export default class Directory extends Component {
         {/* <div>Directory</div> */}
         <form onSubmit={this.handleSearchButtonClick.bind(this)}>
           <label style={searchBox}>
-            <input style={updateButton} type="text" placeholder="Enter last name" onChange={this.handleSearchInputChange.bind(this)} />
-            <input style={updateButton} type="submit" value="Search by last name" />
+            <input style={updateButton} className={css(styles.small)} type="text" placeholder="Enter last name" onChange={this.handleSearchInputChange.bind(this)} />
+            <input style={updateButton} className={css(styles.small)} type="submit" value="Search by last name" />
           </label>
         </form>
-        <div style={divButton}><Button size="sm" style={updateButton} className={css(styles.small)} onClick={this.handleProfileButtonClick.bind(this)}>Enter/update profile</Button></div>
+        <div style={profileButton}><Button size="sm" style={updateButton} className={css(styles.small)} onClick={this.handleProfileButtonClick.bind(this)}>Enter/update profile</Button></div>
         {/* <DirectoryList entryArray={this.state.displayArray} /> */}
         {this.state.displayArray === null ? <div style={errormsg}> No results found </div> : <DirectoryList entryArray={this.state.displayArray} />  }
       </div>
