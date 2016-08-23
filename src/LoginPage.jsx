@@ -4,10 +4,12 @@ import { browserHistory } from 'react-router';
     // browserHistory.push('/chat/nickname')
 
 var logInPageStyle = {
-  backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/background-1430105_1280.png")',
+  // backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/background-1430105_1280.png")',
+  backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/tablet-396841_1280.jpg")',
   // backgroundColor: "green",
   width: '100%',
   minHeight: '100%',
+  backgroundSize: "100%",
 }
 
 var topBanner = {
@@ -28,26 +30,26 @@ var topBanner = {
 
 var instructions = {
   paddingTop: "75px",
-  paddingLeft: "50px",
-  paddingRight: "50px",
-  fontFamily: 'Bungee',
-  color: "lightgreen",
+  // paddingLeft: "50px",
+  // paddingRight: "50px",
+  fontFamily: 'Syncopate',
+  color: "orangered",
   textAlign: "center",
-  display: "inline-block",
+  // display: "inline-block",
   // fontSize: "32px",
-  fontSize: "3vw",
-  fontWeight: "bold",
-  WebkitTextStroke: "1px black",
+  fontSize: "2.5vw",
+  // fontWeight: "bold",
+  // WebkitTextStroke: "1px black",
 }
 
 var forgotid = {
-  color: "white",
+  color: "chartreuse",
   fontFamily: "Verdana",
-  fontSize: "1.5vw",
-  paddingTop: "20px",
+  fontSize: "2vw",
+  paddingTop: "50px",
   paddingBottom: "20px",
   textAlign: "center",
-  fontWeight: "bold",
+  // fontWeight: "bold",
 }
 
 var inputBox = {
@@ -60,6 +62,12 @@ var inputBox = {
   fontWeight: "bold",
   margin: "0 auto",
   // paddingLeft: "400px",
+}
+
+var inputTxt = {
+  color: "black",
+  border: "2px solid black",
+  fontWeight: "bold",
 }
 
 export default class LoginPage extends Component {
@@ -95,8 +103,8 @@ export default class LoginPage extends Component {
       <div><h5 style={forgotid}>If you have forgotten your id, please contact the admin at admin@admin.com</h5></div>
       <form onSubmit={this.handleSubmitButtonClick.bind(this)}>
         <label style={inputBox}>
-          <input type="text" placeholder="Enter id" onChange={this.handleIdInputChange.bind(this)} />
-          <input type="submit" value="Enter" />
+          <input type="text" style={inputTxt} placeholder="Enter id" onChange={this.handleIdInputChange.bind(this)} />
+          <input type="submit" style={inputTxt} value="Enter" />
         </label>
       </form>
       </div>
