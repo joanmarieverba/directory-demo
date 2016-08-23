@@ -4,7 +4,7 @@ import elementalStyles from '../node_modules/elemental/less/elemental.less';
 import { Button } from 'elemental';
 import stores from './stores.jsx';
 import {directory} from './stores.jsx';
-
+import { StyleSheet, css } from 'aphrodite';
 
 var confirmPageStyle = {
   backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/b066cf3d002a1b5c_1920-e1471016591329.jpg")',
@@ -35,6 +35,15 @@ var msgBanner = {
    float: "right",
    marginLeft: "10px",
  }
+
+ const rtnbtn = StyleSheet.create({
+   small: {
+         '@media (max-width: 800px)': {
+             fontSize: '2vw',
+             marginTop: '2vw',
+         }
+     }
+ });
 
  var placeButton = {
   //  height: '20px',
@@ -121,7 +130,7 @@ export default class Confirm extends Component {
     return (
       <div style={confirmPageStyle} >
         <span style={msgBanner}>Your Profile Information Has Been Saved</span>
-        <div style={placeButton}><Button size="sm" style={returnButton} onClick={this.handleReturnButtonClick.bind(this)}>Return to Directory</Button></div>
+        <div style={placeButton}><Button size="sm" style={returnButton} className={css(rtnbtn.small)} onClick={this.handleReturnButtonClick.bind(this)}>Return to Directory</Button></div>
         <div style= {confirmPageItem}>
           <div>{this.state.firstName}  {this.state.lastName}</div>
           <div>{this.state.penName}</div>
@@ -148,7 +157,6 @@ export default class Confirm extends Component {
     );
   }
 };
-
 
 // @media only screen and (max-width: 767px) {
 //    h1 {
