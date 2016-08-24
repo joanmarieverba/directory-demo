@@ -24,10 +24,14 @@ var directoryStyle = {
 
 const printbtn = StyleSheet.create({
   btn: {
-        "@media print" : {
-             display: "none",
-        }
+    '@media (max-width: 800px)': {
+      fontSize: '2vw',
+      marginTop: '3vw',
+    },
+    "@media print" : {
+        display: "none",
     }
+  }
 });
 
 export default class DirectoryList extends Component {
