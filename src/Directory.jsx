@@ -37,8 +37,17 @@ var titleBanner = {
          '@media (max-width: 800px)': {
              fontSize: '2vw',
              marginTop: '2vw',
+         },
+         "@media print" : {
+              display: "none",
          }
+     },
+   header: {
+     "@media print" : {
+          display: "none",
+          border: "0",
      }
+   }
  });
 
  var updateButton = {
@@ -142,7 +151,7 @@ export default class Directory extends Component {
 
     return (
       <div style={directoryPageStyle} >
-        <span style={titleBanner}>Directory</span>
+        <span style={titleBanner} className={css(styles.header)}>Directory</span>
         {/* <div>Directory</div> */}
         <form onSubmit={this.handleSearchButtonClick.bind(this)}>
           <label style={searchBox}>

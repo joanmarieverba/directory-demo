@@ -4,6 +4,7 @@ import { Button, Alert, Spinner, Row, Col, Form, FormField, FormInput } from 'el
 import { browserHistory } from 'react-router';
 import stores from './stores.jsx';
 import {directory} from './stores.jsx';
+import { StyleSheet, css } from 'aphrodite';
 
 var listStyle = {
   fontWeight: "bold",
@@ -19,6 +20,14 @@ var listStyle = {
   fontSize: "14px",
   backgroundColor: "white",
 }
+
+const printStyle = StyleSheet.create({
+  border: {
+        "@media print" : {
+             border: "0",
+        }
+    }
+});
 
 var delButton = {
   display: "inline-block",
@@ -57,7 +66,7 @@ export default class DirectoryItem extends Component {
     });
     return (
       <div>
-        <h4 style={listStyle}>
+        <h4 style={listStyle}  className={css(printStyle.border)}>
           {/* if condition is true, display the div, otherwise, don't display anything */}
           {this.state.userid === "activeadmin42" ? <div style={delButton}><Button size="sm" style={deleteButton} onClick={this.handleDeleteButtonClick.bind(this)}>Delete this record</Button></div> : null }
           <div>{this.props.firstName} {this.props.lastName}</div>
