@@ -63,7 +63,7 @@ var confirmPageItem = {
   width: "50%",
   margin: "55px auto",
   marginBottom: "10px",
-  marginTop: "55px",
+  marginTop: "75px",
   border: "3px solid #73AD21",
   borderRadius: "15px",
   fontFamily: "Verdana",

@@ -10,12 +10,12 @@ var listStyle = {
   fontWeight: "bold",
   display: "block",
   padding: "10px",
-  width: "50%",
+  width: "45%",
   margin: "0 auto",
   marginBottom: "10px",
   border: "3px solid #73AD21",
   borderRadius: "15px",
-  // textAlign: "justify",
+  lineHeight: 1.3,
   fontFamily: "Verdana",
   fontSize: "14px",
   backgroundColor: "white",
@@ -54,7 +54,7 @@ export default class DirectoryItem extends Component {
     var adminid = this.state.userid;
     directory.remove({id: this.props.id});
     console.log("delete button clicked", adminid);
-    // browserHistory.push('/profile/');
+    // browserHistory.push('/directory/');
   }
 
   render (){

@@ -11,6 +11,7 @@ import { StyleSheet, css } from 'aphrodite';
 var directoryPageStyle = {
   backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/the-background-707185_1280.png")',
   // backgroundColor: "olive",
+  backgroundSize: "auto 100%",
   width: '100%',
   minHeight: '100%',
 }
@@ -32,6 +33,15 @@ var titleBanner = {
    WebkitTransition: 'all',
    msTransition: 'all'
  }
+
+ var footer = {
+    backgroundColor: "limegreen",
+    height: "250px",
+    // position: "absolute",
+    bottom: "0",
+    marginTop: "10px",
+ }
+
  const styles = StyleSheet.create({
    small: {
          '@media (max-width: 800px)': {
@@ -54,6 +64,7 @@ var titleBanner = {
    color: "black",
    border: "2px solid black",
    fontWeight: "bold",
+   marginRight: "1px",
  }
 
   var profileButton = {
@@ -162,6 +173,7 @@ export default class Directory extends Component {
         <div style={profileButton}><Button size="sm" style={updateButton} className={css(styles.small)} onClick={this.handleProfileButtonClick.bind(this)}>Enter/update profile</Button></div>
         {/* <DirectoryList entryArray={this.state.displayArray} /> */}
         {this.state.displayArray === null ? <div style={errormsg}> No results found </div> : <DirectoryList entryArray={this.state.displayArray} />  }
+        <div style={footer}></div>
       </div>
     );
   }

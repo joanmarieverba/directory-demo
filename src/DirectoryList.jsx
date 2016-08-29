@@ -7,7 +7,7 @@ import { StyleSheet, css } from 'aphrodite';
 
 var directoryStyle = {
     marginTop: "10px",
-    marginBottom: '50px',
+    // marginBottom: '50px',
     WebkitTransition: 'all',
     msTransition: 'all'
  };
