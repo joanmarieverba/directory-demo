@@ -129,30 +129,32 @@ export default class Confirm extends Component {
     });
     return (
       <div style={confirmPageStyle} >
-        <span style={msgBanner}>Your Profile Information Has Been Saved</span>
+        <span style={msgBanner}>Your Entries/Changes Have Been Saved</span>
         <div style={placeButton}><Button size="sm" style={returnButton} className={css(rtnbtn.small)} onClick={this.handleReturnButtonClick.bind(this)}>Return to Directory</Button></div>
-        <div style= {confirmPageItem}>
-          <div>{this.state.firstName}  {this.state.lastName}</div>
-          <div>{this.state.penName}</div>
-          <div>{this.state.street1}</div>
-          <div>{this.state.street2}</div>
-          <div>{this.state.city}  {this.state.mystate}  {this.state.postCode}  {this.state.country}</div>
-          <div>{this.state.phone} {this.state.altPhone}</div>
-          <div>{this.state.email} {this.state.altEmail}</div>
-          <div>{this.state.website}</div>
-          {this.state.agent !== "" ? <div>Agent: {this.state.agent}</div> : null }
-          {/* <div>Agent: {this.state.agent}</div> */}
-          <div>{this.state.fb}</div>
-          <div>{this.state.tw}</div>
-          <div>{ formatted }</div>
-          {/* <div>{this.state.credits}</div> */}
-          {/* <div>{this.state.credits.split("\n").map(function(item) {
+        {this.state.userid !== "activeadmin42" ?
+          <div style= {confirmPageItem}>
+            <div>{this.state.firstName}  {this.state.lastName}</div>
+            <div>{this.state.penName}</div>
+            <div>{this.state.street1}</div>
+            <div>{this.state.street2}</div>
+            <div>{this.state.city}  {this.state.mystate}  {this.state.postCode}  {this.state.country}</div>
+            <div>{this.state.phone} {this.state.altPhone}</div>
+            <div>{this.state.email} {this.state.altEmail}</div>
+            <div>{this.state.website}</div>
+            {this.state.agent !== "" ? <div>Agent: {this.state.agent}</div> : null }
+            {/* <div>Agent: {this.state.agent}</div> */}
+            <div>{this.state.fb}</div>
+            <div>{this.state.tw}</div>
+            <div>{ formatted }</div>
+            {/* <div>{this.state.credits}</div> */}
+            {/* <div>{this.state.credits.split("\n").map(function(item) {
                   return (
                       <span>  {item}  <br/> </span>
                   )
                 })}
-          </div> */}
-        </div>
+                </div> */}
+          </div>
+         : null }  
       </div>
     );
   }

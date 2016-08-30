@@ -54,7 +54,7 @@ export default class DirectoryItem extends Component {
     var adminid = this.state.userid;
     directory.remove({id: this.props.id});
     console.log("delete button clicked", adminid);
-    // browserHistory.push('/directory/');
+    browserHistory.push('/confirm/');
   }
 
   render (){
