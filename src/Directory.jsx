@@ -11,7 +11,7 @@ import { StyleSheet, css } from 'aphrodite';
 var directoryPageStyle = {
   backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/green-background.png")',
   // backgroundColor: "olive",
-  backgroundSize: "auto 100%",
+  backgroundSize: "100%",
   width: '100%',
   minHeight: '100%',
 }
@@ -35,7 +35,6 @@ var titleBanner = {
  }
 
  var footer = {
-    display: "none",
     backgroundColor: "limegreen",
     height: "250px",
     // position: "absolute",
