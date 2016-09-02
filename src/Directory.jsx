@@ -9,7 +9,7 @@ import { StyleSheet, css } from 'aphrodite';
 
 
 var directoryPageStyle = {
-  backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/green-background.png")',
+  backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/the-background-707185_1280.png")',
   // backgroundColor: "olive",
   backgroundSize: "100%",
   width: '100%',
