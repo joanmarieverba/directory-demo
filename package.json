@@ -11,7 +11,7 @@
     "build:dev": "webpack",
     "build:prod": "NODE_ENV=production webpack",
     "serve:dev:client": "hjs-dev-server webpack.config.js",
-    "serve:dev:server": "hz serve --dev",
+    "serve:dev:server": "hz serve --dev --bind 0.0.0.0",
     "serve:prod": "node ./util/server/express.js",
     "schema:dump": "hz get-schema -o ./.hz/schema.toml",
     "schema:restore": "hz set-schema ./.hz/schema.toml --connect $(./util/scripts/parseurl.sh $RETHINKDB_URL)",
