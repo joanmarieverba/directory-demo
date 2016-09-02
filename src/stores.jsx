@@ -4,8 +4,8 @@ import Horizon from '@horizon/client';
 let port;
 let secure;
 if (process.env.NODE_ENV === 'production') {
-  port = 443;
-  secure = true;
+  port = 80;
+  secure = false;
 } else {
   port = 8181;
   secure = false;
