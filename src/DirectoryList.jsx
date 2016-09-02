@@ -20,6 +20,7 @@ var directoryStyle = {
    fontWeight: "bold",
    display: "block",
    margin: "0 auto",
+   marginBottom: "15px",
 }
 
 const printbtn = StyleSheet.create({
