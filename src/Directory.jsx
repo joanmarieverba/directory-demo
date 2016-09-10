@@ -166,8 +166,8 @@ export default class Directory extends Component {
         {/* <div>Directory</div> */}
         <form onSubmit={this.handleSearchButtonClick.bind(this)}>
           <label style={searchBox}>
-            <input style={updateButton} className={css(styles.small)} type="text" placeholder="Enter last name" onChange={this.handleSearchInputChange.bind(this)} />
-            <input style={updateButton} className={css(styles.small)} type="submit" value="Search by last name" />
+            <input style={updateButton} className={css(styles.small)} type="text" placeholder="Enter last or single name" onChange={this.handleSearchInputChange.bind(this)} />
+            <input style={updateButton} className={css(styles.small)} type="submit" value="Search" />
           </label>
         </form>
         <div style={profileButton}><Button size="sm" style={updateButton} className={css(styles.small)} onClick={this.handleProfileButtonClick.bind(this)}>Enter/update profile</Button></div>

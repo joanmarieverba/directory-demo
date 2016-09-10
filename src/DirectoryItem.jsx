@@ -69,8 +69,9 @@ export default class DirectoryItem extends Component {
         <h4 style={listStyle}  className={css(printStyle.border)}>
           {/* if condition is true, display the div, otherwise, don't display anything */}
           {this.state.userid === "activeadmin42" ? <div style={delButton}><Button size="sm" style={deleteButton} onClick={this.handleDeleteButtonClick.bind(this)}>Delete this record</Button></div> : null }
+          {this.state.userid === "activeadmin42" ? <div>ID: {this.props.id}</div> : null }
           <div>{this.props.firstName} {this.props.lastName}</div>
-          <div>{this.props.penName}</div>
+          {this.props.penName !== "" ? <div>Writing as: {this.props.penName}</div> : null }
           <div>{this.props.street1}</div>
           <div>{this.props.street2}</div>
           <div>{this.props.city} {this.props.mystate} {this.props.postCode} {this.props.country}</div>

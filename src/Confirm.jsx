@@ -134,7 +134,7 @@ export default class Confirm extends Component {
         {this.state.userid !== "activeadmin42" ?
           <div style= {confirmPageItem}>
             <div>{this.state.firstName}  {this.state.lastName}</div>
-            <div>{this.state.penName}</div>
+            {this.state.penName !== "" ? <div>Writing as: {this.state.penName}</div> : null }
             <div>{this.state.street1}</div>
             <div>{this.state.street2}</div>
             <div>{this.state.city}  {this.state.mystate}  {this.state.postCode}  {this.state.country}</div>
@@ -154,7 +154,7 @@ export default class Confirm extends Component {
                 })}
                 </div> */}
           </div>
-         : null }  
+         : null }
       </div>
     );
   }

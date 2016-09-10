@@ -192,7 +192,7 @@ export default class ProfileForm extends Component {
                 		<FormInput value={this.state.firstName} name="firstName" onChange={this.handleFirstNameChange.bind(this)} />
                 	</FormField>
                   <FormField width="one-third" >
-                    Last Name:
+                    Last Name or Single Name:
                     <FormInput value={this.state.lastName} name="lastName" onChange={this.handleLastNameChange.bind(this)}  />
                   </FormField>
                 </FormRow>
