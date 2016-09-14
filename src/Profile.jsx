@@ -9,7 +9,7 @@ import {directory} from './stores.jsx';
 
 
 var chatpageStyle = {
-    backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/low-poly-square.jpg")',
+    backgroundImage: 'url("http://joanmarieverba.net/low-poly-square.jpg")',
     // backgroundColor: "lightblue",
     width: "100%",
     minHeight: "100%",

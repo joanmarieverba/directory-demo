@@ -7,7 +7,7 @@ import {directory} from './stores.jsx';
 import { StyleSheet, css } from 'aphrodite';
 
 var confirmPageStyle = {
-  backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/b066cf3d002a1b5c_1920-e1471016591329.jpg")',
+  backgroundImage: 'url("http://joanmarieverba.net/book-and-pens.jpg")',
   // backgroundColor: "skyblue",
   backgroundSize: "100%",
   width: '100%',
