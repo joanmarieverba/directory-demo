@@ -7,7 +7,7 @@ import {directory} from './stores.jsx';
 import { StyleSheet, css } from 'aphrodite';
 
 var confirmPageStyle = {
-  backgroundImage: 'url("b066cf3d002a1b5c_1920.jpg")',
+  backgroundImage: 'url("http://joanmarieverba.net/b066cf3d002a1b5c_1920.jpg")',
   // backgroundColor: "skyblue",
   backgroundSize: "100%",
   width: '100%',
