@@ -100,7 +100,7 @@ export default class LoginPage extends Component {
       <div style={logInPageStyle} >
       <span style={topBanner}>Welcome to the Directory Database</span>
       <div style={instructions}>Enter your id and click the Enter button to begin:</div>
-      <div><h5 style={forgotid}>If you have forgotten your id, please contact the admin at admin@admin.com</h5></div>
+      <div><h5 style={forgotid}>Questions? Comments? Forgot id? Contact Joan at verba001@gmail.com</h5></div>
       <form onSubmit={this.handleSubmitButtonClick.bind(this)}>
         <label style={inputBox}>
           <input type="text" style={inputTxt} placeholder="Enter id" onChange={this.handleIdInputChange.bind(this)} />
