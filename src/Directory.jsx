@@ -149,7 +149,8 @@ export default class Directory extends Component {
   render() {
     this.state.entryArray.sort(function(a, b) {
       var nameA = a.lastName.toUpperCase() + a.firstName.toUpperCase(); // ignore upper and lowercase
-      var nameB = b.lastName.toUpperCase() + a.firstName.toUpperCase(); // ignore upper and lowercase
+      var nameB = b.lastName.toUpperCase() + b.firstName.toUpperCase(); // ignore upper and lowercase
+
       if (nameA < nameB) {
           return -1;
       }
