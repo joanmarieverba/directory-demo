@@ -10,4 +10,7 @@ Alphabetical directory -
 Search function -
 Print/save function -
 Confirmation page -
-Ability for Admin to delete records
+Ability for Admin to delete records  
+
+Demo at: https://www.youtube.com/watch?v=HUAb1ytFVS4&feature=youtu.be  
+
