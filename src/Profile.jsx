@@ -9,8 +9,8 @@ import {directory} from './stores.jsx';
 
 
 var chatpageStyle = {
-    backgroundImage: 'url("http://joanmarieverba.net/low-poly-square.jpg")',
-    // backgroundColor: "lightblue",
+    //backgroundImage: 'url("http://joanmarieverba.net/low-poly-square.jpg")',
+    backgroundColor: "midnightblue",
     width: "100%",
     minHeight: "100%",
     WebkitTransition: 'all',

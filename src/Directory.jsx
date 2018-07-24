@@ -9,8 +9,8 @@ import { StyleSheet, css } from 'aphrodite';
 
 
 var directoryPageStyle = {
-  backgroundImage: 'url("http://joanmarieverba.net/the-background-707185_1280.png")',
-  // backgroundColor: "olive",
+  //backgroundImage: 'url("http://joanmarieverba.net/the-background-707185_1280.png")',
+  backgroundColor: "olive",
   backgroundSize: "100%",
   width: '100%',
   minHeight: '100%',

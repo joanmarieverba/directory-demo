@@ -5,8 +5,8 @@ import { browserHistory } from 'react-router';
 
 var logInPageStyle = {
   // backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/background-1430105_1280.png")',
-  backgroundImage: 'url("http://joanmarieverba.net/tablet-new.jpg")',
-  // backgroundColor: "green",
+  //backgroundImage: 'url("/src/assets/images/tablet-new.jpg")',
+  backgroundColor: "green",
   width: '100%',
   minHeight: '100%',
   backgroundSize: "100%",

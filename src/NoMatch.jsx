@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import globalStyles from "./assets/styles/global.css";
 
 var errorPage = {
-    backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/computer-desk.jpg")',
+    //backgroundImage: 'url("./src/assets/images/computer-desk.jpg")',
+    backgroundColor: "midnightblue",
    //  position: "fixed",
     width: "100%",
     minHeight: "100%",
