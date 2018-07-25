@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import globalStyles from "./assets/styles/global.css";
+import Computer from "./assets/images/computer-desk.jpg";
 
 var errorPage = {
-    //backgroundImage: 'url("./src/assets/images/computer-desk.jpg")',
-    backgroundColor: "midnightblue",
-   //  position: "fixed",
+   backgroundImage: `url(${Computer})`,
+   // backgroundColor: "midnightblue",
+   //position: "fixed",
     width: "100%",
     minHeight: "100%",
 };
 var errorMsg = {
     paddingTop: "50px",
     textAlign: "center",
-    color: "white",
+    color: "gold",
     fontFamily: "Verdana",
     fontWeight: "bold",
     // WebkitTextStroke: "1px black",
