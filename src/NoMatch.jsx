@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import globalStyles from "./assets/styles/global.css";
-import Computer from "./assets/images/computer-desk.jpg";
+import Forest from "./assets/images/forest.jpg";
 
 var errorPage = {
-   backgroundImage: `url(${Computer})`,
+   backgroundImage: `url(${Forest})`,
    // backgroundColor: "midnightblue",
    //position: "fixed",
-    width: "100%",
-    minHeight: "100%",
+   // width: "100%",
+   // height: "100vh",
+    objectFit: "cover",
+  backgroundSize: "100%",
+  width: '100%',
+  minHeight: '100%',
 };
 var errorMsg = {
     paddingTop: "50px",
@@ -15,7 +19,7 @@ var errorMsg = {
     color: "gold",
     fontFamily: "Verdana",
     fontWeight: "bold",
-    // WebkitTextStroke: "1px black",
+    //WebkitTextStroke: "1px black",
  };
 
 export default class NoMatch extends Component {
