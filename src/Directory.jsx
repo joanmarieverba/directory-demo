@@ -8,7 +8,7 @@ import {directory} from './stores.jsx';
 import { StyleSheet, css } from 'aphrodite';
 
 
-var directoryPageStyle = {
+const directoryPageStyle = {
   //backgroundImage: 'url("http://joanmarieverba.net/the-background-707185_1280.png")',
   backgroundColor: "olive",
   backgroundSize: "100%",
@@ -16,7 +16,7 @@ var directoryPageStyle = {
   minHeight: '100%',
 }
 
-var titleBanner = {
+const titleBanner = {
    width : "100%",
    display: "block",
    margin: "0 auto",
@@ -34,12 +34,14 @@ var titleBanner = {
    msTransition: 'all'
  }
 
- var footer = {
+ const footer = {
     backgroundColor: "limegreen",
-    height: "250px",
+    height: "30px",
     // position: "absolute",
     bottom: "0",
     marginTop: "10px",
+    textAlign: "center",
+    fontFamily: 'Verdana',
  }
 
  const styles = StyleSheet.create({
@@ -60,14 +62,14 @@ var titleBanner = {
    }
  });
 
- var updateButton = {
+ const updateButton = {
    color: "black",
    border: "2px solid black",
    fontWeight: "bold",
    marginRight: "1px",
  }
 
-  var profileButton = {
+  const profileButton = {
     height: '20px',
     position: "fixed",
     zIndex: "100",
@@ -76,7 +78,7 @@ var titleBanner = {
     top: "12px",
   }
 
-  var searchBox = {
+  const searchBox = {
     height: '20px',
     position: "fixed",
     zIndex: "100",
@@ -85,7 +87,7 @@ var titleBanner = {
     top: "12px",
   }
 
-  var errormsg = {
+  const errormsg = {
     color: "black",
     fontFamily: 'Verdana',
     fontSize: "18px",
@@ -126,7 +128,7 @@ export default class Directory extends Component {
     e.preventDefault(); //prevents form submission from deleting current page context
     console.log("search term entered", this.state.searchedName);
     localStorage.setItem("searchedName", this.state.searchedName);
-    var searchArray = this.state.entryArray.filter((item) => {
+    let searchArray = this.state.entryArray.filter((item) => {
      if (item.lastName.toLowerCase() === this.state.searchedName.toLowerCase()){return true;} else {return false;}
     });
     if (searchArray.length > 0) {
@@ -148,8 +150,8 @@ export default class Directory extends Component {
 
   render() {
     this.state.entryArray.sort(function(a, b) {
-      var nameA = a.lastName.toUpperCase() + a.firstName.toUpperCase(); // ignore upper and lowercase
-      var nameB = b.lastName.toUpperCase() + b.firstName.toUpperCase(); // ignore upper and lowercase
+      let nameA = a.lastName.toUpperCase() + a.firstName.toUpperCase(); // ignore upper and lowercase
+      let nameB = b.lastName.toUpperCase() + b.firstName.toUpperCase(); // ignore upper and lowercase
 
       if (nameA < nameB) {
           return -1;
@@ -174,7 +176,7 @@ export default class Directory extends Component {
         <div style={profileButton}><Button size="sm" style={updateButton} className={css(styles.small)} onClick={this.handleProfileButtonClick.bind(this)}>Enter/update profile</Button></div>
         {/* <DirectoryList entryArray={this.state.displayArray} /> */}
         {this.state.displayArray === null ? <div style={errormsg}> No results found </div> : <DirectoryList entryArray={this.state.displayArray} />  }
-        <div style={footer}></div>
+        <div style={footer}>Directory courtesy Joan Marie Verba</div>
       </div>
     );
   }
