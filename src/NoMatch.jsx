@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import globalStyles from "./assets/styles/global.css";
-import Forest from "./assets/images/forest.jpg";
+import Scenery from "./assets/images/Image266-scenery.jpg";
 
-var errorPage = {
-   backgroundImage: `url(${Forest})`,
+const errorPage = {
+   backgroundImage: `url(${Scenery})`,
    // backgroundColor: "midnightblue",
    //position: "fixed",
    // width: "100%",
@@ -13,7 +13,8 @@ var errorPage = {
   width: '100%',
   minHeight: '100%',
 };
-var errorMsg = {
+
+const errorMsg = {
     paddingTop: "50px",
     textAlign: "center",
     color: "gold",
@@ -22,12 +23,16 @@ var errorMsg = {
     //WebkitTextStroke: "1px black",
  };
 
+ const linkColor = {
+   color: "midnightblue",
+ }
+
 export default class NoMatch extends Component {
   render() {
     return (
       <div style={errorPage}>
         <h2 style={errorMsg}>Not a directory page, but feel free to admire the background</h2>
-        <h4 style={errorMsg}>You probably want to <a href="/">start over</a></h4>
+        <h4 style={errorMsg}>You probably want to <a style={linkColor} href="/">start over</a></h4>
       </div>
     );
   }
