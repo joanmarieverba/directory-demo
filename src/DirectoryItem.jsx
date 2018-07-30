@@ -6,7 +6,7 @@ import stores from './stores.jsx';
 import {directory} from './stores.jsx';
 import { StyleSheet, css } from 'aphrodite';
 
-var listStyle = {
+const listStyle = {
   fontWeight: "bold",
   display: "block",
   padding: "10px",
@@ -29,12 +29,12 @@ const printStyle = StyleSheet.create({
     }
 });
 
-var delButton = {
+const delButton = {
   display: "inline-block",
   border: "1px solid black",
 }
 
-var deleteButton = {
+const deleteButton = {
   backgroundColor: "green",
 }
 
