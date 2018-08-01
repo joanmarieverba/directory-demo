@@ -6,7 +6,7 @@ import stores from './stores.jsx';
 import {directory} from './stores.jsx';
 import { StyleSheet, css } from 'aphrodite';
 
-var confirmPageStyle = {
+const confirmPageStyle = {
   //backgroundImage: 'url("http://joanmarieverba.net/b066cf3d002a1b5c_1920.jpg")',
   backgroundColor: "midnightblue",
   backgroundSize: "100%",
@@ -14,7 +14,7 @@ var confirmPageStyle = {
   minHeight: '100%',
 }
 
-var msgBanner = {
+const msgBanner = {
    width : "100%",
    position: "fixed",
    textAlign: "center",
@@ -31,7 +31,7 @@ var msgBanner = {
    msTransition: 'all'
  }
 
- var returnButton = {
+ const returnButton = {
    float: "right",
    marginLeft: "10px",
  }
@@ -45,7 +45,7 @@ var msgBanner = {
      }
  });
 
- var placeButton = {
+ const placeButton = {
   //  height: '20px',
   //  height: '2vw',
    position: "fixed",
@@ -55,7 +55,7 @@ var msgBanner = {
    top: "12px",
  }
 
-var confirmPageItem = {
+const confirmPageItem = {
   position: "fixed",
   fontWeight: "bold",
   display: "block",
