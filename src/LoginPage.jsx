@@ -3,7 +3,7 @@ import { browserHistory } from 'react-router';
 
     // browserHistory.push('/chat/nickname')
 
-var logInPageStyle = {
+const logInPageStyle = {
   // backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/background-1430105_1280.png")',
   //backgroundImage: 'url("/src/assets/images/tablet-new.jpg")',
   backgroundColor: "green",
@@ -12,7 +12,7 @@ var logInPageStyle = {
   backgroundSize: "100%",
 }
 
-var topBanner = {
+const topBanner = {
    width : "100%",
    position: "fixed",
    textAlign: "center",
@@ -28,7 +28,7 @@ var topBanner = {
    msTransition: 'all'
  }
 
-var instructions = {
+const instructions = {
   paddingTop: "75px",
   // paddingLeft: "50px",
   // paddingRight: "50px",
@@ -42,7 +42,7 @@ var instructions = {
   // WebkitTextStroke: "1px black",
 }
 
-var forgotid = {
+const forgotid = {
   color: "chartreuse",
   fontFamily: "Verdana",
   fontSize: "2vw",
@@ -52,7 +52,7 @@ var forgotid = {
   // fontWeight: "bold",
 }
 
-var inputBox = {
+const inputBox = {
   paddingTop: "40px",
   display: "block",
   textAlign: "center",
@@ -64,7 +64,7 @@ var inputBox = {
   // paddingLeft: "400px",
 }
 
-var inputTxt = {
+const inputTxt = {
   color: "black",
   border: "2px solid black",
   fontWeight: "bold",
