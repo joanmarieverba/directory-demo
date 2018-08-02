@@ -5,14 +5,14 @@ import { Button, Alert, Spinner, Row, Col, Form, FormField, FormInput } from 'el
 import { browserHistory } from 'react-router';
 import { StyleSheet, css } from 'aphrodite';
 
-var directoryStyle = {
+const directoryStyle = {
     marginTop: "10px",
     // marginBottom: '50px',
     WebkitTransition: 'all',
     msTransition: 'all'
  };
 
- var printButton = {
+ const printButton = {
    height: '28px',
    textAlign: 'center',
    color: "black",
