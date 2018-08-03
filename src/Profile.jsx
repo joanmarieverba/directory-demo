@@ -8,7 +8,7 @@ import stores from './stores.jsx';
 import {directory} from './stores.jsx';
 
 
-var chatpageStyle = {
+const chatpageStyle = {
     //backgroundImage: 'url("http://joanmarieverba.net/low-poly-square.jpg")',
     backgroundColor: "midnightblue",
     width: "100%",
@@ -17,7 +17,7 @@ var chatpageStyle = {
     msTransition: 'all'
  };
 
- var boxheader = {
+ const boxheader = {
    paddingLeft: "30px",
   //  paddingRight: "150px",
    paddingTop: "20px",
@@ -31,7 +31,8 @@ var chatpageStyle = {
   //  WebkitTextStroke: "1px black",
    color: "white",
  }
- var instruction = {
+ 
+ const instruction = {
       paddingLeft: "30px",
       paddingBottom: "10px",
       fontFamily: "Verdana",
