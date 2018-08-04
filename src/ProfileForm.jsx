@@ -5,7 +5,7 @@ import { browserHistory } from 'react-router';
 import stores from './stores.jsx';
 import {directory} from './stores.jsx';
 
-var wholeForm = {
+const wholeForm = {
   color: "white",
   fontFamily: "Arial",
   fontWeight: "bold",
@@ -13,7 +13,7 @@ var wholeForm = {
   marginRight : "30px",
 }
 
- var sendbutton = {
+ const sendbutton = {
    marginRight: "130px",
    marginLeft: "5px",
    float: "left",
