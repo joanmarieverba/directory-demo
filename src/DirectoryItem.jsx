@@ -58,10 +58,10 @@ export default class DirectoryItem extends Component {
   }
 
   render (){
-    var lines = this.props.credits;
-    var formatted = lines.split("\n").map(function(item) {
+    let lines = this.props.credits;
+    let formatted = lines.split("\n").map(function(item, index) {
             return (
-                     <span>  {item}  <br/> </span>
+              <span key={index}>  {item}  <br/> </span>
                  )
     });
     return (

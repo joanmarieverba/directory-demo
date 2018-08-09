@@ -35,7 +35,8 @@ const titleBanner = {
  }
 
  const footer = {
-    backgroundColor: "limegreen",
+    // backgroundColor: "limegreen",
+    borderTop: "1px solid black",
     height: "30px",
     // position: "absolute",
     bottom: "0",

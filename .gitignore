@@ -39,5 +39,6 @@ jspm_packages
 
 rethinkdb_data
 
-#ignore.configuration
-Base.jsx
+#ignore group password
+config.js
+

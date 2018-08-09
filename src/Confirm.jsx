@@ -121,10 +121,10 @@ export default class Confirm extends Component {
   }
 
   render() {
-    var lines = this.state.credits;
-    var formatted = lines.split("\n").map(function(item) {
+    let lines = this.state.credits;
+    let formatted = lines.split("\n").map(function(item, index) {
             return (
-                     <span>  {item}  <br/> </span>
+              <span key={index}>  {item}  <br/> </span>
                  )
     });
     return (
