@@ -286,7 +286,7 @@ export default class ProfileForm extends Component {
 
               <FormRow>
                 <FormField width="two-thirds" >
-                  Credits (novels, short stories, audio, etc.):
+                  Credits (tie-in works only: novels, short stories, audio, etc.):
                   <FormInput value={this.state.credits} multiline onChange={this.handleCreditsChange.bind(this)} />
                 </FormField>
               </FormRow>
