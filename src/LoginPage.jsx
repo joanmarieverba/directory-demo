@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { browserHistory } from 'react-router'; 
-
 import {key} from './config.js';
+//require('dotenv').config();
+//let key = process.env.REACT_APP_SECRET;
 
 const logInPageStyle = {
   // backgroundImage: 'url("http://jmvtestsite.com/wp-content/uploads/2016/08/background-1430105_1280.png")',
