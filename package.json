@@ -35,7 +35,7 @@
     "dotenv": "^6.0.0",
     "elemental": "^0.6.1",
     "express": "^4.22.1",
-    "firebase": "^10.9.0",
+    "firebase": "^12.7.0",
     "fs": "0.0.1-security",
     "hjs-webpack": "^8.3.0",
     "horizon": "^2.0.0",
